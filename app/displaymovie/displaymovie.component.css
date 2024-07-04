@@ -1,0 +1,51 @@
+.movie-container {
+    width: 8cm;
+    display: inline-block; /* Display containers inline */
+    border: 1px solid #cccccc;
+    padding: 10px;
+    margin-right: 10px; /* Add margin to create space between containers */
+    margin-bottom: 10px;
+    border-radius: 5px;
+    height: 7cm;
+    background-color: #149e7b;
+
+}
+.movie-container :hover {
+    background-color: #79f8f8;
+    color: black;
+}
+.movie-container h2 {
+    color: #333;
+    font-size: 20px;
+    margin: 0; /* Set margin to 0 to remove white space */
+    align-self: center;
+}
+
+.movie-container p {
+    margin: 5px 0;
+}
+#bg
+{
+    background-image: url("C:\\Windows\\System32\\review-app\\src\\app\\home\\bg1.jpg");
+    background-color: #343a40; /* Dark background color */
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+
+}
+#left {
+    flex: 1;
+  }
+  #right{
+    flex: 1;
+      }
+      .flex-container {
+        display: flex;
+      }
+.right{
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    background-color: #149e7b;
+
+}     

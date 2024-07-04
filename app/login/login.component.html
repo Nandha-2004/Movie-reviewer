@@ -1,0 +1,30 @@
+<head>
+    <style>
+        
+        </style>
+    </head>
+    <body id="nand">
+        <h2>
+    <div class="l_menu">
+        <a href="/home">Home</a>
+    </div>
+</h2>
+<div class="container">
+    <h1>Admin Login Page</h1>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+        <label>Email:</label>
+        <input class="summa" type="email" ngModel #email="ngModel" pattern="[a-z0-9]+[@][a-z]+[.][a-z]+" name="email" required>
+        <div *ngIf="email.invalid && email.touched">
+            <span class=ret myreqstyle *ngIf="email.errors?.['required']">* Email is required</span>
+            <span class=ret myreqstyle *ngIf="email.errors?.['email']">* Valid email required</span>
+            <span class=ret myreqstyle *ngIf="email.errors?.['pattern']">*Invalid email</span>
+</div>    
+        <label>Password:</label>
+        <input class="summa" type="password" id="pwd" ngModel #pwd="ngModel" name="pwd" required><br><br>
+
+        <button type="submit">Login</button>
+        <div *ngIf="msg" class="error">{{ msg }}</div>
+    </form>
+</div>
+<br><br><br><br><br><br><br><br>
+</body>

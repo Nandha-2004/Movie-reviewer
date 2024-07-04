@@ -1,0 +1,43 @@
+<head>
+    <style>
+        #bg
+{
+    background-image: url("C:\\Windows\\System32\\review-app\\src\\app\\home\\bg1.jpg");
+    background-color: #343a40; /* Dark background color */
+
+}
+         .l_menu {
+    background-color: #343a40; /* Dark background color */
+    overflow: hidden;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.l_menu a {
+    text-decoration: none;
+    color: #ffffff; /* White text color */
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.l_menu a:hover {
+    color: #adb5bd; /* Lighter text color on hover */
+}
+
+        </style>
+    </head>
+    <body id="bg">
+        <h2>
+    <div class="l_menu">
+        <a href="uhome">HOME</a>
+        <a href="displaymovie">REVIEW</a>
+        <a href="ahome">USER REVIEW</a>
+        <a href="home" (click)="logout()">LOGOUT</a>
+
+    </div>
+</h2>
+<div class="banner">
+    <video id="video-player" [src]="currentVideo" (click)="handleClick()" autoplay loop controls></video>
+  </div>
+</body>

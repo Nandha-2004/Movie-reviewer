@@ -1,0 +1,40 @@
+<body bgcolor="black"><h2>
+  <div class="l_menu">
+      <a href="uhome">HOME</a>
+      <a href="displaymovie">REVIEW</a>
+      <a href="home" (click)="logout()">LOGOUT</a>
+    </div>
+</h2>
+
+<div class="movie-details-container" *ngIf="movieDetails" >
+  <div class="title-box"> <!-- Added a wrapper for the title -->
+    <label>{{ movieDetails.m_name }}</label>
+  </div>  <div class="flex-container">
+  <div class="left">
+  <img src="assets/{{movieDetails.m_name}}.jpg" style="width: 10cm; height: 15cm;" alt="Movie Images" al>
+  </div>
+  <div class="right">
+  <p>Name: {{ movieDetails.m_name }}</p>
+  <p>Year: {{ movieDetails.year  }}</p>
+  <p>Genre: {{ movieDetails.gener }}</p>
+  <p>Language: {{ movieDetails.lang }}</p>
+  <p>IMDB Rate: {{ movieDetails.rate }}</p>
+  <p>Description: {{ movieDetails.description }}</p>
+  <p>Type: {{ movieDetails.type }}</p>  <!-- Add more details as needed -->
+  <br>
+  </div>
+  </div>
+  <h2>Trailer:</h2>
+  <div class="video-container">
+    <video width="10cm" height="6cm" controls>
+      <source src="assets/{{movieDetails.m_name}}.mp4" type="video/mp4" autoplay loop controls>
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+<div *ngIf="!movieDetails">
+  <p>Loading...</p>
+</div>
+
+</body>

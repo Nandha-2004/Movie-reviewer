@@ -1,0 +1,51 @@
+<head>
+    <style>
+  .l_menu {
+    background-color: #343a40; /* Dark background color */
+    overflow: hidden;
+    text-align: left;
+    padding: 10px 0;
+}
+
+.l_menu a {
+    text-decoration: none;
+    color: #ffffff; /* White text color */
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.l_menu a:hover {
+    color: #adb5bd; /* Lighter text color on hover */
+}
+        </style>
+    </head>
+<body>
+    <h2>
+        <div class="l_menu">
+            <a href="uhome">HOME</a>
+            <a href="displaymovie">REVIEW</a>
+            <a href="ahome">USER REVIEW</a>
+            <a href="home" (click)="logout()">LOGOUT</a>
+        </div>
+    </h2>
+    <div class="container">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+            <h1 align="center">Add Movie review</h1>
+            <label>Movie Name:</label><input class="summa" type="text" ngModel #m_name="ngModel" name="m_name" required><br><br>
+            <label>Year:</label>
+            <input class="summa" type="number" maxlength="4" minlength="4" ngModel #year="ngModel" name="year" required><br><br>
+            <div *ngIf="year.invalid && year.touched">
+                <span class=ret myreqstyle *ngIf="year.errors?.['required']">* year is required</span>
+                <span class=ret myreqstyle *ngIf="year.errors?.['minlength']">Enter valid year</span>
+                <span class=ret myreqstyle *ngIf="year.errors?.['maxlength']">Enter valid year</span>    
+            </div>
+            <label>Genre:</label>
+            <input class="summa" type="text" ngModel #gener="ngModel" name="gener" required><br><br>
+            <label>USER REVIEW:</label>
+            <input class="summa" type="text" ngModel #description="ngModel" name="description" required><br><br>
+            <button class="summa2" type="submit">Add Movie</button><br><br>
+            <h2 style="text-align: center;">{{msg}}</h2>
+        </form>
+    </div> 
+</body>

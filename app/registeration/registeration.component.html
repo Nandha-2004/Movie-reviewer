@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="background">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User registration</title>
+    <style>
+
+    </style>
+</head>
+<body id="nand">
+    <h2>
+        <div class="l_menu">
+            <a href="/ulogin">Login</a>
+            <a href="/registeration">Register</a>
+    </div>
+    </h2>
+    <div class="container">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+            <h1 align="center">Register Page</h1>
+            <label>Username:</label>
+            <input class="summa" type="text" minlength="3"   ngModel #username="ngModel" name="username" required><br><br>
+            <div *ngIf="username.invalid && username.touched">
+                <span class=ret myreqstyle *ngIf="username.errors?.['required']">* Username is required</span>
+                <span class=ret myreqstyle *ngIf="username.errors?.['minlength']">Enter valid username</span>
+            </div><label>Phone Number:</label>
+            <input class="summa" type="text" maxlength="10" minlength="10" ngModel #phno="ngModel" name="phno" required><br><br>
+            <div *ngIf="phno.invalid && phno.touched">
+                <span class=ret myreqstyle *ngIf="phno.errors?.['required']">* Phone number is required</span>
+                <span class=ret myreqstyle *ngIf="phno.errors?.['minlength']">Enter valid phone number</span>
+                <span class=ret myreqstyle *ngIf="phno.errors?.['maxlength']">Enter valid phone number</span>    
+            </div><label>Email:</label>
+            <input class="summa" type="email" ngModel #email="ngModel" pattern="[a-z0-9]+[@][a-z]+[.][a-z]+" name="email" required>
+            <div *ngIf="email.invalid && email.touched">
+                <span class=ret myreqstyle *ngIf="email.errors?.['required']">* Email is required</span>
+                <span class=ret myreqstyle *ngIf="email.errors?.['email']">* Valid email required</span>
+                <span class=ret myreqstyle *ngIf="email.errors?.['pattern']">*Invalid email</span>
+</div>     
+            <label>Password:</label>
+            <input class="summa" type="password"  minlength="7" maxlength="10" pattern="[0-9A-Za-z!@#$%^&*()_+=-]+" id="pwd" ngModel #pwd="ngModel" name="pwd" required><br><br>
+            <div *ngIf="pwd.invalid && pwd.touched">
+                <span class=ret myreqstyle *ngIf="pwd.errors?.['required']">*password is required</span>
+                <span class=ret myreqstyle *ngIf="pwd.errors?.['minlength']">min length is 7</span>
+                <span class=ret myreqstyle *ngIf="pwd.errors?.['maxlength']">max length is 10</span>
+                <span class=ret myreqstyle *ngIf="pwd.errors?.['pattern']">*password should have alphanumerics and special characters</span>
+            </div>
+            <p>
+            <label ><button class="button" type="submit" >Submit</button></label>
+            <label ><a href="/ulogin" style="color:white      ;">Already have an account? Login </a></label>
+            <h2 style="text-align: center;">{{msg}}</h2>
+        </form>
+    </div>
+    <br><br><br><br>
+</body>
+</html>

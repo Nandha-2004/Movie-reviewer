@@ -1,0 +1,34 @@
+#bg
+{
+    background-image: url("C:\\Windows\\System32\\review-app\\src\\app\\home\\bg1.jpg");
+    background-color: #343a40; /* Dark background color */
+
+}
+.banner {
+    text-align: center;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    height: 800px; /* Set height to full viewport height */
+  }
+ 
+.banner1,.banner1 {
+  text-align: center;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  height: 800px; /* Set height to full viewport height */
+}
+
+  .background {
+    border: 2px solid #ffffff; /* White border */
+    width: auto; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    cursor: pointer;
+    background-color: #acc5dd; /* Dark background color */
+  }
+  
+  .background:hover {
+    opacity: 0.8; /* Reduced opacity on hover */
+  }
+  

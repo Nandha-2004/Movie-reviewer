@@ -1,0 +1,47 @@
+<style>
+
+.l_menu {
+    background-color: #343a40; /* Dark background color */
+    overflow: hidden;
+    text-align: left;
+    padding: 10px 0;
+}
+
+.l_menu a {
+    text-decoration: none;
+    color: #ffffff; /* White text color */
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.l_menu a:hover {
+    color: #adb5bd; /* Lighter text color on hover */
+}
+
+</style>
+<body id="bg">
+<h2>
+    <div class="l_menu">
+        <a href="uhome">HOME</a>
+        <a href="displaymovie">REVIEW</a>
+        <a href="home" (click)="logout()">LOGOUT</a>
+    </div>
+</h2>
+<div *ngFor="let movie of movies" class="movie-container" (click)="navigateToFullDetail(movie.m_name)">
+    <h2>{{ movie.m_name }}</h2>
+    <div class="flex-container">
+        <div class="left">
+        <img src="assets/{{movie.m_name}}.jpg" style="width: 4cm; height: 6cm;" alt="assets/{{movie.m_name}}.jpeg">
+    </div>
+    <div class="right">
+    <p>Name{{ movie.m_name }}</p>
+    <p>Year: {{ movie.year }}</p>
+    <p>Genre: {{ movie.gener }}</p>
+    <p>Language: {{ movie.lang }}</p>
+    <p>IMDB Rate: {{ movie.rate }}</p>
+    <p>Type: {{ movie.type }}</p>
+    </div>   
+    </div> <!-- Add more fields as needed -->
+</div>
+</body>

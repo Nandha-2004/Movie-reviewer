@@ -1,0 +1,27 @@
+<head>
+
+    </head>
+<h2>
+    <div class="l_menu">
+        <a href="/home">Home</a>
+        <a href="/ulogin">Login</a>
+        <a href="/registeration">Register</a>
+    </div>
+</h2>
+<body id="nand">
+    <br><br><br><br>
+    <div class="container">
+    <h1>User Login Page</h1>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+        <label>Email:</label>
+        <input class="summa" type="email" ngModel #email="ngModel" name="email" required><br><br>
+
+        <label>Password:</label>
+        <input class="summa" type="password" id="pwd" ngModel #pwd="ngModel" name="pwd" required><br><br>
+
+        <button type="submit">Login</button>
+        <div *ngIf="msg" class="error">{{ msg }}</div>
+    </form>
+</div>
+<br><br><br><br><br><br><br><br>
+</body>
